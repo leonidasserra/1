@@ -1,4 +1,4 @@
-
+var expressao ='';
 function insert(num){
     expressao += num;
     atualizarVisor();
@@ -12,7 +12,13 @@ function back(){
     atualizarVisor();
 }
 function calcular(){
-    
+    try {
+        expressao = eval(expressao).toString();
+        atualizarVisor();
+    } catch (error) {
+        expressao = "Erro";
+        atualizarVisor();
+    }
 }
 
 // usar a seguinte função nas outras funcionalidades
