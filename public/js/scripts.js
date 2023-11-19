@@ -16,7 +16,7 @@ function calcular() {
     const resultadoElemento = document.getElementById('resultado');
   
     // Obtém a expressão do conteúdo do elemento
-    const expressao = resultadoElemento.innerHTML;
+    let expressao = resultadoElemento.innerHTML;
   
     // Remove espaços em branco da expressão e verifica se está vazia
     if (!expressao.trim()) {
@@ -34,9 +34,9 @@ function calcular() {
     } catch (error) {
       // Em caso de erro, define o conteúdo do elemento como 'Erro'
       resultadoElemento.innerHTML = 'Erro';
+      return;
     }
   }
-
 // usar a seguinte função nas outras funcionalidades
 function atualizarVisor() {
     document.getElementById("resultado").innerText = expressao;
